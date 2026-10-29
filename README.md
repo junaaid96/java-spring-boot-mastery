@@ -1,6 +1,6 @@
-# Java & Spring Boot Learning Path
+# Java Spring Boot Mastery
 
-[![CI](https://github.com/junaaid96/exploring-servlet-spring-mvc-spring-boot/actions/workflows/ci.yml/badge.svg)](https://github.com/junaaid96/exploring-servlet-spring-mvc-spring-boot/actions/workflows/ci.yml)
+[![CI](https://github.com/junaaid96/java-spring-boot-mastery/actions/workflows/ci.yml/badge.svg)](https://github.com/junaaid96/java-spring-boot-mastery/actions/workflows/ci.yml)
 ![Java 25](https://img.shields.io/badge/Java-25-orange)
 ![Spring Boot 4.1](https://img.shields.io/badge/Spring%20Boot-4.1-brightgreen)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -39,7 +39,9 @@ Java 25 (LTS) · Spring Boot 4.1.2 · Spring Framework 7 · Jakarta EE 11 · Jac
 ```
 
 ## History
-This repo merges the earlier `exploring_java` and `java_collection_framework` repositories plus the original Servlet / Spring MVC / Spring Boot demos (XML config, Java config, JDBC, Spring Data JPA/REST, Security, AOP, JobApp), rewritten for Java 25 and Spring Boot 4.
+This repository was formerly named `exploring-servlet-spring-mvc-spring-boot` (old links redirect here). It merges the earlier `exploring_java` and `java_collection_framework` repositories plus the original Servlet / Spring MVC / Spring Boot demos (XML config, Java config, JDBC, Spring Data JPA/REST, Security, AOP, JobApp), rewritten for Java 25 and Spring Boot 4.
 
 ## Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md). Licensed under [MIT](LICENSE).
+
+Clone: `git clone https://github.com/junaaid96/java-spring-boot-mastery.git`
