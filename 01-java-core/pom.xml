@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Module 01: plain modern Java, no frameworks. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- Inherit Java version and test libraries from the root POM. -->
+    <parent>
+        <groupId>dev.junaaid96.learning</groupId>
+        <artifactId>java-learning-path</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>01-java-core</artifactId>
+    <name>01 - Modern Java Core</name>
+</project>
