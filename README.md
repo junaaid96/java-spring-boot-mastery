@@ -7,6 +7,9 @@
 
 One repo to go from core Java to a production-style Spring Boot 4 API. Every source file has line-by-line learning comments. Every module has a README with concepts, the **most asked interview questions**, best practices and common pitfalls.
 
+## Website
+📖 Read the modules online at **https://junaaid96.github.io/java-spring-boot-mastery/**, with search, dark mode and every module's Java source inline. The site is built from this repo's Markdown (see [`website/`](website)).
+
 ## Study order
 | # | Module | You will learn |
 |---|---|---|
@@ -34,6 +37,7 @@ Java 25 (LTS) · Spring Boot 4.1.2 · Spring Framework 7 · Jakarta EE 11 · Jac
 ```
 ├── 01-java-core/ … 06-spring-boot/   one Maven module per topic
 ├── docs/BEST_PRACTICES.md
+├── website/                          VitePress docs site (GitHub Pages)
 ├── .github/workflows/ci.yml          JDK 25 build + tests + Docker image build
 └── pom.xml                           reactor POM (Spring Boot parent manages versions)
 ```
