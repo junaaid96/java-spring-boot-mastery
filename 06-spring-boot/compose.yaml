@@ -1,0 +1,29 @@
+# Local development stack: PostgreSQL plus the API.
+services:
+  db:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: jobboard
+      POSTGRES_USER: jobboard
+      POSTGRES_PASSWORD: jobboard
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jobboard"]
+      interval: 5s
+      retries: 10
+  app:
+    build:
+      context: ..
+      dockerfile: 06-spring-boot/Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/jobboard
+      DB_USER: jobboard
+      DB_PASSWORD: jobboard
+      # Dev-only value. Use a real secret manager in production.
+      JOBBOARD_JWT_SECRET: local-compose-secret-at-least-32-characters
+    ports:
+      - "8080:8080"

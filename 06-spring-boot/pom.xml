@@ -46,6 +46,7 @@
     </dependencies>
 
     <build>
+        <finalName>job-board</finalName>
         <plugins>
             <!-- Builds an executable jar and OCI images (./mvnw spring-boot:build-image). -->
             <plugin>
