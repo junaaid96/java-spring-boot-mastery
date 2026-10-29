@@ -1,0 +1,16 @@
+:root {
+  --vp-c-brand-1: #2f7d63;
+  --vp-c-brand-2: #3c8772;
+  --vp-c-brand-3: #4b9b82;
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #2f7d63 30%, #4f7fd6);
+}
+.dark {
+  --vp-c-brand-1: #5fc8a3;
+  --vp-c-brand-2: #4bb490;
+  --vp-c-brand-3: #3c9d7c;
+}
+.vp-doc { line-height: 1.75; }
+.vp-doc table { display: block; overflow-x: auto; }
+.vp-doc .mermaid { overflow-x: auto; text-align: center; margin: 1rem 0; }
+.vp-doc details.details summary .VPBadge { margin-left: 0.4rem; vertical-align: middle; }
