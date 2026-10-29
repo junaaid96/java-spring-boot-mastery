@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root aggregator POM: builds every learning module with one command (./mvnw verify). -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Spring Boot's parent gives us tested, aligned versions of Spring, JUnit, Jakarta, plugins. -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.1.2</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>dev.junaaid96.learning</groupId>
+    <artifactId>java-learning-path</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Java Learning Path</name>
+    <description>Modern Java 25, Collections, OOP/SOLID, Servlet, Spring MVC and Spring Boot 4 in one repo.</description>
+
+    <properties>
+        <!-- Java 25 is the current LTS release. -->
+        <java.version>25</java.version>
+        <maven.compiler.release>25</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <springdoc.version>3.2.0</springdoc.version>
+    </properties>
+
+    <!-- Study order: each module builds on the previous one. -->
+    <modules>
+        <module>01-java-core</module>
+        <module>02-collections</module>
+        <module>03-oop-and-solid</module>
+        <module>04-servlet-basics</module>
+        <module>05-spring-mvc</module>
+        <module>06-spring-boot</module>
+    </modules>
+
+    <!-- Every module gets JUnit 5 + AssertJ for tests. -->
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
