@@ -1,0 +1,58 @@
+# Default profile: local development against the PostgreSQL in compose.yaml.
+spring:
+  application:
+    name: job-board
+  threads:
+    virtual:
+      # Serve each request on a virtual thread (Java 21+): great for blocking I/O like JDBC.
+      enabled: true
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/jobboard}
+    username: ${DB_USER:jobboard}
+    password: ${DB_PASSWORD:jobboard}
+  jpa:
+    # Don't keep the DB session open while rendering responses (avoids hidden lazy-loading queries).
+    open-in-view: false
+    hibernate:
+      # Learning setup only. Use Flyway/Liquibase migrations with ddl-auto=validate in production.
+      ddl-auto: update
+  cache:
+    cache-names: jobs
+
+jobboard:
+  # Dev-only default. Always override with the JOBBOARD_JWT_SECRET environment variable outside your laptop.
+  jwt-secret: ${JOBBOARD_JWT_SECRET:change-me-dev-only-secret-at-least-32-chars}
+  token-ttl-minutes: 60
+  max-page-size: 100
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # Expose only what you need.
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      probes:
+        # /actuator/health/liveness and /readiness for Kubernetes.
+        enabled: true
+  observations:
+    key-values:
+      application: job-board
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+---
+# "prod" profile: activated with SPRING_PROFILES_ACTIVE=prod.
+spring:
+  config:
+    activate:
+      on-profile: prod
+  jpa:
+    hibernate:
+      ddl-auto: validate
+springdoc:
+  api-docs:
+    # Hide API docs in production unless you deliberately want them public.
+    enabled: false

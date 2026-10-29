@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Module 04: raw Jakarta Servlet API (the foundation under Spring MVC). Packaged as a WAR for any Servlet 6.1 container. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>dev.junaaid96.learning</groupId>
+        <artifactId>java-learning-path</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>04-servlet-basics</artifactId>
+    <packaging>war</packaging>
+    <name>04 - Jakarta Servlet Basics</name>
+    <dependencies>
+        <!-- "provided": the container (Tomcat/Jetty) supplies the API at runtime. jakarta.* replaced javax.* in Jakarta EE 9+. -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Mockito lets tests fake HttpServletRequest/Response without a server. -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

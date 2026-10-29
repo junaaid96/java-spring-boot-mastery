@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Module 05: Spring Framework 7 + Spring MVC without Boot, so you see what Boot auto-configures for you. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>dev.junaaid96.learning</groupId>
+        <artifactId>java-learning-path</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>05-spring-mvc</artifactId>
+    <packaging>war</packaging>
+    <name>05 - Spring Core and Spring MVC</name>
+    <dependencies>
+        <!-- DispatcherServlet, @Controller, handler mappings. Pulls in spring-context (IoC/DI). -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <!-- Spring AOP proxies + AspectJ annotations for @Aspect. -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+        </dependency>
+        <!-- Jackson 3 converts objects to/from JSON for @RestController. -->
+        <dependency>
+            <groupId>tools.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <!-- Provided by the servlet container at runtime. -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Spring TestContext + MockMvc. -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- JsonPath powers jsonPath(...) assertions in MockMvc. -->
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

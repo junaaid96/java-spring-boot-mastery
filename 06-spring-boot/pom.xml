@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Module 06: a production-style Spring Boot 4 REST API on Java 25. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>dev.junaaid96.learning</groupId>
+        <artifactId>java-learning-path</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>06-spring-boot</artifactId>
+    <name>06 - Spring Boot 4 Job Board API</name>
+
+    <dependencies>
+        <!-- Spring MVC + embedded Tomcat + Jackson 3. -->
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-webmvc</artifactId></dependency>
+        <!-- Jakarta Bean Validation (@NotBlank, @Size...). -->
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-validation</artifactId></dependency>
+        <!-- Spring Data JPA + Hibernate. -->
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-data-jpa</artifactId></dependency>
+        <!-- Spring Security as an OAuth2 resource server that validates JWTs. -->
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-security-oauth2-resource-server</artifactId></dependency>
+        <!-- Spring Cache abstraction (simple in-memory provider by default). -->
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-cache</artifactId></dependency>
+        <!-- Health, metrics, info endpoints + Micrometer. -->
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-actuator</artifactId></dependency>
+        <!-- Exposes metrics in Prometheus format at /actuator/prometheus. -->
+        <dependency><groupId>io.micrometer</groupId><artifactId>micrometer-registry-prometheus</artifactId></dependency>
+        <!-- OpenAPI 3 docs + Swagger UI at /swagger-ui.html. -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${springdoc.version}</version>
+        </dependency>
+        <!-- PostgreSQL JDBC driver, only needed at runtime. -->
+        <dependency><groupId>org.postgresql</groupId><artifactId>postgresql</artifactId><scope>runtime</scope></dependency>
+
+        <!-- Test pyramid: MockMvc slice tests, security test helpers, Testcontainers integration tests. -->
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-webmvc-test</artifactId><scope>test</scope></dependency>
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-data-jpa-test</artifactId><scope>test</scope></dependency>
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-security-oauth2-resource-server-test</artifactId><scope>test</scope></dependency>
+        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-testcontainers</artifactId><scope>test</scope></dependency>
+        <dependency><groupId>org.testcontainers</groupId><artifactId>testcontainers-junit-jupiter</artifactId><scope>test</scope></dependency>
+        <dependency><groupId>org.testcontainers</groupId><artifactId>testcontainers-postgresql</artifactId><scope>test</scope></dependency>
+    </dependencies>
+
+    <build>
+        <finalName>job-board</finalName>
+        <plugins>
+            <!-- Builds an executable jar and OCI images (./mvnw spring-boot:build-image). -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
